@@ -7,6 +7,12 @@
     </h5>
     <form method="post" class="post-form my-3">
         {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+            {% for field in form %}
+                {% if %}
+
+            </div>
         {{ form.as_p  }}
         <button type="submit" class="btn btn-primary">저장하개</button>
     </form>
