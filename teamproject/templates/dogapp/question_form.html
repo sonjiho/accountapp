@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h5 class="my-3 border-bottom pb-2">
+        질문하시개
+    </h5>
+    <form method="post" class="post-form my-3">
+        {% csrf_token %}
+        {{ form.as_p  }}
+        <button type="submit" class="btn btn-primary">저장하개</button>
+    </form>
+</div>
+{% endblock %}
