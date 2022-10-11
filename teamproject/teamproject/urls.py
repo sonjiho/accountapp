@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from dogapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('appdog/', include('appdog.urls')),
+    path('dogapp/', include('dogapp.urls')),
 ]
