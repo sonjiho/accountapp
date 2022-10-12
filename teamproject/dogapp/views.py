@@ -3,7 +3,7 @@ from .models import Question
 from django.utils import timezone
 from .forms import QuestionForm, AnswerForm
 
-def index(request):
+def qna(request):
     """ 목록 출력"""
     question_list = Question.objects.order_by('-create_date')
     context={'question_list':question_list}
@@ -29,7 +29,7 @@ def question_create(request):
             question = form.save(commit=False)
             question.create_date = timezone.now()
             question.save()
-            return redirect('dogapp:index')
+            return redirect('dogapp:qna')
     else:
         form = QuestionForm()
     context = {'form':form}
