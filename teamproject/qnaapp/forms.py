@@ -1,5 +1,5 @@
 from django import forms
-from dogapp.models import Question, Answer
+from qnaapp.models import Question, Answer
 
 class QuestionForm(forms.ModelForm):
     class Meta:

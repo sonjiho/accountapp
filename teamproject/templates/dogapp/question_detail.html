@@ -33,7 +33,7 @@
     </div>
   </div>
   {% endfor %}
-  <form action="{% url 'dogapp:answer_create' question.id %}" method="post" class="my-3">
+  <form action="{% url 'qnaapp:answer_create' question.id %}" method="post" class="my-3">
     {% csrf_token %}
     {% if form.errors %}
     <div class="alert alert-danger" role="alert">

@@ -19,7 +19,7 @@ def answer_create(request, question_id):
     """답변 등록"""
     question=get_object_or_404(Question,pk=question_id)
     question.answer_set.create(content=request.POST.get('content'), create_date=timezone.now())
-    return redirect('dogapp:detail', question_id=question.id)
+    return redirect('qnaapp:detail', question_id=question.id)
 
 def question_create(request):
     """질문 등록"""
@@ -29,7 +29,7 @@ def question_create(request):
             question = form.save(commit=False)
             question.create_date = timezone.now()
             question.save()
-            return redirect('dogapp:qna')
+            return redirect('qnaapp:qna')
     else:
         form = QuestionForm()
     context = {'form':form}
@@ -45,7 +45,7 @@ def answer_create(request, question_id):
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
-            return redirect('dogapp:detail', question_id=question.id)
+            return redirect('qnaapp:detail', question_id=question.id)
         else:
             form = AnswerForm()
         context={'question':question, 'form':form}
