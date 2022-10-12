@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class DogappConfig(AppConfig):
+class QnaappConfig(AppConfig):
     name = 'qnaapp'

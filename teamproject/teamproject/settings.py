@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mainapp',
-    'qnaapp',
+    'mainapp.apps.MainappConfig',
+    'qnaapp.apps.QnaappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

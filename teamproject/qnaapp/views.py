@@ -6,6 +6,7 @@ from .forms import QuestionForm, AnswerForm
 def qna(request):
     """ 목록 출력"""
     question_list = Question.objects.order_by('-create_date')
+    print('asdsdssdsdsdds')
     context={'question_list':question_list}
     return render(request, 'dogapp/question_list.html', context)
 
@@ -33,6 +34,7 @@ def question_create(request):
     else:
         form = QuestionForm()
     context = {'form':form}
+    print(form)
     return render(request, 'dogapp/question_form.html', context)
 
 def answer_create(request, question_id):
