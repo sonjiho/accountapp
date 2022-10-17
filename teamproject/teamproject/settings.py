@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
     'qnaapp.apps.QnaappConfig',
-    'accountapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR, 'static',
+    os.path.join(BASE_DIR. 'static'),
 ]
 
 # Default primary key field type
